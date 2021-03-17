@@ -1,0 +1,10 @@
+# Environments and settings
+.vscode
+flask_venv
+
+# Byte compiled
+__pycache__/
+*.py[cod]
+
+# Databases
+*.sqlite
