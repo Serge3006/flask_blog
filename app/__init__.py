@@ -3,6 +3,7 @@ from flask import Flask, jsonify
 from flask import request, render_template, redirect, url_for, session, flash
 from flask_bootstrap import Bootstrap
 from flask_moment import Moment
+from flask_mail import Mail
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
@@ -14,6 +15,7 @@ from flask_login import LoginManager
 
 bootstrap = Bootstrap()
 moment = Moment()
+mail = Mail()
 db = SQLAlchemy()
 login_manager = LoginManager()
 login_manager.login_view = "auth.login"
@@ -25,6 +27,7 @@ def create_app(config_name):
 
     bootstrap.init_app(app)
     moment.init_app(app)
+    mail.init_app(app)
     db.init_app(app)
     login_manager.init_app(app)
 
