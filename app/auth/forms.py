@@ -29,4 +29,5 @@ class RegistrationForm(FlaskForm):
         if User.query.filter_by(username=field.data).first():
             raise ValidationError("Username already exists")
 
+
     
